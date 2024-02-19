@@ -1,0 +1,49 @@
+.main {
+    background-color: #f7f3e9;
+    color: #6D4833 !important;
+}
+
+.borderRound {
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    border-radius: 50px;
+    border: 2px solid;
+}
+
+.inputButton {
+    border: none;
+    color: #6D4833;
+    background-color: transparent;
+    border-bottom: 2px solid #6D4833;
+}
+
+.emailInput {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #6D4833;
+    background-color: transparent;
+
+}
+
+::-ms-input-placeholder {
+    color: red;
+}
+
+.footerList li{
+    margin: 10px 10px 2px 10px;
+}
+
+.footerList li a{
+    color: #6D4833;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+.footerBg {
+    height: 110px;
+    background-image: url("../../../../assets/images/chevrons-937583_1280.webp");
+    background-size: contain;
+}
+

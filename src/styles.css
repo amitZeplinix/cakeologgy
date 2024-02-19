@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900');
+.tx-12{
+    font-size: 12px;
+    
+}
+.font-14px{
+    font-size: 12px;
+    /* font-weight: 400; */
+  }
+  
+  .feather-18{
+    width: 18px;
+    height: 18px;
+  }
+  .smallIcon {
+    height: 16px;
+    width: 16px;
+  }
+  
+  .underlineAnimation {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    color: #6D4833;
+  }
+  
+  .underlineAnimation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #6D4833;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .underlineAnimation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .container {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    color: white !important;
+  }
+  
+  @media (min-width:576px) {
+    .container {
+        max-width: 540px
+    }
+  }
+  
+  @media (min-width:768px) {
+    .container {
+        max-width: 720px
+    }
+  }
+  
+  @media (min-width:992px) {
+    .container {
+        max-width: 960px
+    }
+  }
+  
+  @media (min-width:1080px) {
+    .container {
+        max-width: 1140px
+    }
+  }
+  
+  .container-fluidd {
+    width: 100%;
+  }
