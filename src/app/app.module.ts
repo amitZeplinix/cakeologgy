@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddressComponent } from './pages/address/address.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { DiscoverAndOffersComponent } from './pages/discover-and-offers/discover-and-offers.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
     FooterComponent,
     HomeComponent,
     AddressComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    DiscoverAndOffersComponent,
   ],
   imports: [
     BrowserModule,

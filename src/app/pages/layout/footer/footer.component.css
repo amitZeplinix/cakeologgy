@@ -45,5 +45,17 @@
     height: 110px;
     background-image: url("../../../../assets/images/chevrons-937583_1280.webp");
     background-size: contain;
+    bottom: -20px;
 }
+
+.subTitleOurAddress {
+    font-family: sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: #6D4833;
+    font-size: 0.9rem;
+    line-height: 2.7rem;
+    /* letter-spacing: .1rem; */
+    margin: 2rem 1.5rem 2rem 1.5rem;
+  }
 

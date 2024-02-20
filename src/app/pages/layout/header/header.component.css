@@ -1,65 +1,92 @@
- .carousel-item {
-     height: 100vh;
-     min-height: 350px;
-     background: no-repeat center center scroll;
-     -webkit-background-size: cover;
-     -moz-background-size: cover;
-     -o-background-size: cover;
-     background-size: cover;
- }
-
- .navbar-brand
- {
-     /* position: absolute;
-     width: 100%;
-     right: 1rem;
-     top: 0;
-     text-align: center; */
- }
-
- .carousel-text{
-    color: #6D4833;
-    background-color: #E9E2D7;
- }
+.carousel-caption {
+  position: absolute;
+  left: 20px;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  width: 30%;
+  bottom: 20px;
+}
 
 
- .button {
-    padding: 0.8em 1.5em;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 1000ms;
-    font-size: 15px;
-    position: relative;
-    overflow: hidden;
-    outline: 2px solid #B8CDC4;
-    background-color: #B8CDC4;
+@media (max-width:576px) {
+  .carousel-caption  {
+      width: 100%;
+      background-color:#e9e2d792 !important;
+      color: white !important;
+      left: 0;
   }
-  
-  .button:hover {
-    color: #ffffff;
-    transform: scale(1);
-    outline: 2px solid #6d4833;
-    box-shadow: 4px 5px 17px -4px #268391;
+}
+
+@media (max-width:768px) {
+  .carousel-caption {
+      width: 100%
   }
-  
-  .button::before {
-    content: "";
-    position: absolute;
-    left: -50px;
-    top: 0;
-    width: 0;
-    height: 100%;
-    background-color: #6d4833;
-    transform: skewX(45deg);
-    z-index: -1;
-    transition: width 1000ms;
-  }
-  
-  .button:hover::before {
-    width: 250%;
-  }
-  
+}
+
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.carousel-text {
+  color: #6D4833;
+  background-color: #E9E2D7;
+  float: left !important;
+}
+
+
+.button {
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid #B8CDC4;
+  background-color: #B8CDC4;
+}
+
+.button:hover {
+  color: #ffffff;
+  transform: scale(1);
+  outline: 2px solid #6d4833;
+  box-shadow: 4px 5px 17px -4px #268391;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #6d4833;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+.button:hover::before {
+  width: 250%;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  background: transparent;
+  color: black;
+  width: 100%;
+  height: 100px;
+}

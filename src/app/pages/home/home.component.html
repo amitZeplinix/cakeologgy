@@ -1,10 +1,10 @@
-<div class="main">
+<div class="main mt-0">
     <!-- video container -->
-    <div class="clickAndShop m-3">
-        <div class="mt-5">
+    <div class="clickAndShop p-3">
+        <div class="pt-5">
             <div class="d-flex justify-content-center text-bold text-uppercase" style="color:#6D4833"> Click & Shop
             </div>
-            <div class="d-flex justify-content-center mt-3">
+            <div class="d-flex justify-content-center mt-3" id="mouseTarget">
                 <span class="subTitle">
                     Discover our creations in video
                 </span>
@@ -35,7 +35,8 @@
                     <div class="d-lg-flex carousel-inner " id="style-3" role="group" aria-label="Carousel slides">
                         <div class="videoBox" *ngFor="let video of videos; let i = index"
                             [style.transform]="'translateX(' + (i * 10) + '%)'">
-                            <video #videoPlayer [src]="video.src" [id]="video.id" type="video/mp4" loop></video>
+                            <video #videoPlayer [src]="video.src" [id]="video.id" (mouseover)="mouseOver(video.id)"
+                                (mouseout)="mouseOut(video.id)" type="video/mp4" loop></video>
                         </div>
                     </div>
                 </div>
@@ -45,8 +46,8 @@
     </div>
 
     <!-- discover container -->
-    <div class="discover m-3">
-        <div class="mt-5">
+    <div class="discover pb-3" style="background-color: #fff !important;">
+        <div class="pt-5 p-3">
             <div class="d-flex justify-content-center text-bold text-uppercase" style="color:#6D4833"> discover
             </div>
             <div class="d-flex justify-content-center mt-3">
@@ -54,7 +55,7 @@
                     offer treats
                 </span>
             </div>
-            <div id="album-rotator">
+            <!-- <div id="album-rotator">
                 <div id="album-rotator-holder" (mousedown)="onMouseDown($event)" (mousemove)="onMouseMove($event)"
                     (mouseup)="onMouseUp()" (mouseleave)="onMouseUp()" class="image-slider">
                     <a target="_top" class="album-item">
@@ -73,14 +74,16 @@
                         </span>
                     </a>
                 </div>
-            </div>
+            </div> -->
+            <app-discover-and-offers></app-discover-and-offers>
         </div>
     </div>
 
     <!-- products container -->
     <div class="products">
-        <div class="content">
-            <div class="d-flex justify-content-center text-bold text-uppercase" style="color:#6D4833">currently in stores
+        <div class="content pt-5">
+            <div class="d-flex justify-content-center text-bold text-uppercase" style="color:#6D4833">currently in
+                stores
             </div>
             <div class="d-flex justify-content-center mt-3">
                 <span class="subTitle">
@@ -94,7 +97,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="https://img.freepik.com/free-photo/chocolate-cake-with-whipped-cream-fruits_140725-2715.jpg?w=740&t=st=1705756476~exp=1705757076~hmac=c9b56d3300870947af19c34b149c09501cfc111c63fadce0553d46d850cda9be"
+                                        src="../../../assets/images/cakes/productCake.jpg"
                                         alt="" class="productImg"> </a>
                                 <span class="text-center">Made With Love</span>
                                 <div class="product-action">
@@ -114,7 +117,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="https://img.freepik.com/free-photo/close-up-delicious-brownies-with-sugar_23-2148361955.jpg?size=626&ext=jpg&ga=GA1.1.1728447072.1703607382&semt=ais"
+                                        src="../../../assets/images/cakes/productBrowinies.jpg"
                                         alt="" class="productImg"> </a>
                                 <span class="text-center">Bars and Brownies</span>
                                 <div class="product-action">
@@ -134,7 +137,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="https://img.freepik.com/free-photo/selection-three-milkshake-glasses-with-fruits-chocolate_23-2148707770.jpg?size=626&ext=jpg&ga=GA1.1.1728447072.1703607382&semt=sph"
+                                        src="../../../assets/images/cakes/productSmoothe.jpg"
                                         alt="" class="productImg"> </a>
                                 <span class="text-center">Bevrages</span>
                                 <div class="product-action">
@@ -154,7 +157,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="https://img.freepik.com/free-photo/front-view-cakes-little-with-brown-cream-strawberry-brown-surface_140725-14350.jpg?size=626&ext=jpg&ga=GA1.1.1728447072.1703607382&semt=ais"
+                                        src="../../../assets/images/cakes/productCupCake.jpg"
                                         alt="" class="productImg"> </a>
                                 <span class="text-center">Cakes</span>
                                 <div class="product-action">
@@ -178,7 +181,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="https://img.freepik.com/free-photo/crispy-khachapuri-with-sesame-seeds_140725-3243.jpg?size=626&ext=jpg&ga=GA1.1.1728447072.1703607382&semt=sph"
+                                        src="../../../assets/images/cakes/productPuffs.jpg"
                                         alt="" class="productImg"> </a>
                                 <span class="text-center">Bakery</span>
                                 <div class="product-action">
@@ -198,7 +201,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="https://img.freepik.com/free-photo/side-view-chocolate-ice-cream-with-nuts-wafer-rolls_140725-11439.jpg?w=740&t=st=1705756962~exp=1705757562~hmac=50f34af24b0786472de18310e3d01ab1eabdbcf3a59274340f4296b3a8ccb091"
+                                        src="../../../assets/images/cakes/productIceCream.jpg"
                                         alt="" class="productImg"> </a>
                                 <span class="text-center">Colds</span>
                                 <div class="product-action">
@@ -218,7 +221,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="https://img.freepik.com/free-photo/side-view-wheat-bread_140725-9303.jpg?w=740&t=st=1705757057~exp=1705757657~hmac=1e6c19533198358afdc40ccdafb395d2e8809f45f8ac617e479942ffa187a68c"
+                                        src="../../../assets/images/cakes/productBreads.jpg"
                                         alt="" class="productImg"> </a>
                                 <span class="text-center">Bakery</span>
                                 <div class="product-action">
@@ -238,7 +241,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="https://img.freepik.com/free-photo/chocolate-brownie-cake-with-scoop-ice-cream_155003-433.jpg?t=st=1705757104~exp=1705757704~hmac=85092287723bf60c19da42537054d1662f9b7534498f0a619afd2614f295c08e"
+                                        src="../../../assets/images/cakes/productPestry.jpg"
                                         alt="" class="productImg"> </a>
                                 <span class="text-center">Pasterys</span>
                                 <div class="product-action">
@@ -261,11 +264,8 @@
     </div>
 
 
-     <!-- about Us container -->
-     <div class="aboutUs">
-        <div class="d-flex justify-content-center text-bold text-uppercase aboutUsTitle pt-4" >
-            About - US
-        </div>
+    <!-- about Us container -->
+    <div class="aboutUs" style="background-color: white !important;">
         <app-about-us></app-about-us>
     </div>
 
@@ -276,7 +276,7 @@
             <div class="d-flex justify-content-center text-bold text-uppercase" style="color:#6D4833;">
                 Our addresses
             </div>
-            <div class="d-flex justify-content-center mt-3 mx-6" style="margin: 0 5rem 0 5rem;">
+            <div class="d-flex flex-wrap justify-content-center">
                 <span class="subTitleOurAddress">
                     India
                 </span>
@@ -291,16 +291,16 @@
                 </span>
             </div>
             <div class="mt-2">
-                <app-address></app-address>
+                <!-- <app-address></app-address> -->
             </div>
         </div>
     </div>
- 
 
-    
+
+
     <!-- oerder  or delivary container -->
     <div class="delivaryContainer">
-        <div class="d-flex justify-content-around p-5" style="color: white">
+        <div class="d-flex flex-wrap justify-content-between p-5" style="color: white">
 
             <div class="col-6 col-lg-3"
                 style="text-align: center;">
@@ -364,5 +364,60 @@
                 </p>
             </div>
         </div>
+
+        <!-- <div class="row">
+            <div class="col-md-3">
+                <i data-feather="smartphone" class="iconsDContainer m-3"></i>
+                <div class="text-uppercase">
+                    <span style="vertical-align: inherit;">
+                        <span style="vertical-align: inherit;">click &amp; collect</span>
+                    </span>
+                </div>
+                <div class="d-block text-muted tx-12">
+                    <span class="text-muted">Order today before 10 p.m. and collect tomorrow from
+                        10 a.m.
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <i data-feather="smartphone" class="iconsDContainer m-3"></i>
+                <div class="text-uppercase">
+                    <span style="vertical-align: inherit;">
+                        <span style="vertical-align: inherit;">click &amp; collect</span>
+                    </span>
+                </div>
+                <div class="d-block text-muted tx-12">
+                        <span  class="text-muted">Order today before 10 p.m. and collect tomorrow from
+                            10 a.m.
+                        </span>
+                    </div>
+            </div>
+            <div class="col-md-3">
+                <i data-feather="smartphone" class="iconsDContainer m-3"></i>
+                <div class="text-uppercase">
+                    <span style="vertical-align: inherit;">
+                        <span style="vertical-align: inherit;">click &amp; collect</span>
+                    </span>
+                </div>
+                <div class="d-block text-muted tx-12">
+                        <span  class="text-muted">Order today before 10 p.m. and collect tomorrow from
+                            10 a.m.
+                        </span>
+                    </div>
+            </div>
+            <div class="col-md-3">
+                <i data-feather="smartphone" class="iconsDContainer m-3"></i>
+                <div class="text-uppercase">
+                    <span style="vertical-align: inherit;">
+                        <span style="vertical-align: inherit;">click &amp; collect</span>
+                    </span>
+                </div>
+                <div class="d-block text-muted tx-12">
+                        <span  class="text-muted">Order today before 10 p.m. and collect tomorrow from
+                            10 a.m.
+                        </span>
+                    </div>
+            </div>
+        </div> -->
     </div>
 </div>

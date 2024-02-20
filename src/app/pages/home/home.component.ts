@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   currentIndex = 0;
   intervalId: any;
 
-  constructor(){
+  constructor() {
     feather.replace();
   }
 
@@ -95,6 +95,33 @@ export class HomeComponent implements OnInit {
   onMouseUp() {
     this.isDragging = false;
     document.querySelector('.image-slider')?.classList.remove('grabbing');
+  }
+
+  // onMouseEnter() {
+  //   const mouseTarget:any = document.querySelector("#mouseTarget");
+
+  //   mouseTarget.addEventListener("mouseenter", (e: any) => {
+  //     mouseTarget.style.color = "green";
+  //   });
+
+  //   mouseTarget.addEventListener("mouseleave", (e: any) => {
+  //     mouseTarget.style.color = "black";
+  //   });
+  // }
+
+  mouseOver(id: any) {
+    let clip: any = document.querySelector("#"+id)
+
+    /* Adding the event listeners on the video to play/pause the video. */
+    clip.addEventListener("mouseover", function (e: any) {
+      clip.play();
+    })
+  }
+  mouseOut(id: any) {
+    let clip: any = document.querySelector("#"+id);
+    clip.addEventListener("mouseout", function (e: any) {
+      clip.pause();
+   })
   }
 }
 
