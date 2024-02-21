@@ -11,32 +11,38 @@
             </div>
 
             <div class="videoDiv">
-                <div class="carouselMainDiv" role="region" aria-roledescription="carousel">
-                    <div class="carouselSubDiv" role="group" aria-label="Navigation controls" style="right: 0px;">
-                        <div class="leftArrow" role="button" aria-label="Carousel navigation previous"
-                            aria-disabled="true" tabindex="0" (click)="playSelectedVideo('prev')">
-                            <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" class="arrow-left-icon">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M13.8516 5.9994C13.8529 6.30645 13.7315 6.60129 13.5144 6.81841C13.2972 7.03554 13.0024 7.15696 12.6953 7.1557L4.07196 7.14755L6.18098 9.25658C6.63071 9.7063 6.63071 10.4354 6.18098 10.8852C5.73126 11.3349 5.00211 11.3349 4.55239 10.8852L0.480914 6.81369C0.375791 6.706 0.292797 6.57874 0.236626 6.43912C0.120284 6.15751 0.120284 5.84128 0.236626 5.55968C0.292797 5.42006 0.375791 5.2928 0.480914 5.1851L4.55239 1.11362C5.00211 0.663901 5.73126 0.663901 6.18098 1.11362C6.63071 1.56335 6.63071 2.29249 6.18098 2.74221L4.07196 4.85124L12.6953 4.8431C13.0024 4.84184 13.2972 4.96326 13.5144 5.18038C13.7315 5.3975 13.8529 5.69234 13.8516 5.9994Z"
-                                    fill="black"></path>
-                            </svg>
-                        </div>
-                        <div class="rightArrow" role="button" aria-label="Carousel navigation next"
-                            aria-disabled="false" tabindex="0" (click)="playSelectedVideo('next')">
-                            <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" class="arrow-right-icon">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.148354 6.0006C0.147095 5.69355 0.268514 5.39871 0.485636 5.18158C0.702758 4.96446 0.9976 4.84304 1.30465 4.8443L9.92804 4.85245L7.81902 2.74342C7.36929 2.2937 7.3693 1.56455 7.81902 1.11483C8.26874 0.665106 8.99789 0.665106 9.44761 1.11483L13.5191 5.18631C13.6242 5.294 13.7072 5.42126 13.7634 5.56088C13.8797 5.84249 13.8797 6.15872 13.7634 6.44032C13.7072 6.57995 13.6242 6.7072 13.5191 6.8149L9.44761 10.8864C8.99789 11.3361 8.26874 11.3361 7.81902 10.8864C7.36929 10.4367 7.36929 9.70751 7.81902 9.25779L9.92804 7.14876L1.30465 7.1569C0.9976 7.15816 0.702758 7.03674 0.485636 6.81962C0.268514 6.6025 0.147095 6.30766 0.148354 6.0006Z"
-                                    fill="black"></path>
-                            </svg>
-                        </div>
+                <div class="carouselSubDiv" role="group" aria-label="Navigation controls" style="right: 0px;">
+                    <div class="leftArrow" role="button" aria-label="Carousel navigation previous"
+                        aria-disabled="true" tabindex="0" (click)="scrollLeft()">
+                        <svg width="14" height="12" viewBox="0 0 14 12" fill="none" (click)="scrollLeft()"
+                            xmlns="http://www.w3.org/2000/svg" class="arrow-left-icon">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M13.8516 5.9994C13.8529 6.30645 13.7315 6.60129 13.5144 6.81841C13.2972 7.03554 13.0024 7.15696 12.6953 7.1557L4.07196 7.14755L6.18098 9.25658C6.63071 9.7063 6.63071 10.4354 6.18098 10.8852C5.73126 11.3349 5.00211 11.3349 4.55239 10.8852L0.480914 6.81369C0.375791 6.706 0.292797 6.57874 0.236626 6.43912C0.120284 6.15751 0.120284 5.84128 0.236626 5.55968C0.292797 5.42006 0.375791 5.2928 0.480914 5.1851L4.55239 1.11362C5.00211 0.663901 5.73126 0.663901 6.18098 1.11362C6.63071 1.56335 6.63071 2.29249 6.18098 2.74221L4.07196 4.85124L12.6953 4.8431C13.0024 4.84184 13.2972 4.96326 13.5144 5.18038C13.7315 5.3975 13.8529 5.69234 13.8516 5.9994Z"
+                                fill="black"></path>
+                        </svg>
                     </div>
-                    <div class="d-lg-flex carousel-inner " id="style-3" role="group" aria-label="Carousel slides">
-                        <div class="videoBox" *ngFor="let video of videos; let i = index"
+                    <div class="rightArrow" role="button" aria-label="Carousel navigation next"
+                        aria-disabled="false" tabindex="0" (click)="scrollRight()">
+                        <svg width="14" height="12" viewBox="0 0 14 12" fill="none" (click)="scrollRight()"
+                            xmlns="http://www.w3.org/2000/svg" class="arrow-right-icon">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0.148354 6.0006C0.147095 5.69355 0.268514 5.39871 0.485636 5.18158C0.702758 4.96446 0.9976 4.84304 1.30465 4.8443L9.92804 4.85245L7.81902 2.74342C7.36929 2.2937 7.3693 1.56455 7.81902 1.11483C8.26874 0.665106 8.99789 0.665106 9.44761 1.11483L13.5191 5.18631C13.6242 5.294 13.7072 5.42126 13.7634 5.56088C13.8797 5.84249 13.8797 6.15872 13.7634 6.44032C13.7072 6.57995 13.6242 6.7072 13.5191 6.8149L9.44761 10.8864C8.99789 11.3361 8.26874 11.3361 7.81902 10.8864C7.36929 10.4367 7.36929 9.70751 7.81902 9.25779L9.92804 7.14876L1.30465 7.1569C0.9976 7.15816 0.702758 7.03674 0.485636 6.81962C0.268514 6.6025 0.147095 6.30766 0.148354 6.0006Z"
+                                fill="black"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="carouselMainDiv" role="region" aria-roledescription="carousel">
+                    
+                    <div class="d-lg-flex carousel-inner " #widgetsContent id="style-3" role="group" aria-label="Carousel slides">
+                        <div  class="videoBox" *ngFor="let video of videos; let i = index"
                             [style.transform]="'translateX(' + (i * 10) + '%)'">
                             <video #videoPlayer [src]="video.src" [id]="video.id" (mouseover)="mouseOver(video.id)"
                                 (mouseout)="mouseOut(video.id)" type="video/mp4" loop></video>
+
+                                <!-- <svg class="video-overlay-play-button" viewBox="0 0 200 200" alt="Play video" (click)="onClickPlay(video.id)">
+                                    <circle class="fill" cx="100" cy="100" r="90" fill="none" stroke-width="5" stroke="#fff"/>
+                                    <polygon class="fill" points="70, 55 70, 145 145, 100" fill="#fff"/>
+                                </svg> -->
                         </div>
                     </div>
                 </div>
@@ -97,7 +103,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="../../../assets/images/cakes/productCake.jpg"
+                                        src="assets/images/cakes/productCake.jpg"
                                         alt="" class="productImg"> </a>
                                 <span class="text-center">Made With Love</span>
                                 <div class="product-action">
@@ -117,7 +123,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="../../../assets/images/cakes/productBrowinies.jpg"
+                                        src="assets/images/cakes/productBrowinies.jpg"
                                         alt="" class="productImg"> </a>
                                 <span class="text-center">Bars and Brownies</span>
                                 <div class="product-action">
@@ -137,7 +143,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="../../../assets/images/cakes/productSmoothe.jpg"
+                                        src="assets/images/cakes/productSmoothe.jpg"
                                         alt="" class="productImg"> </a>
                                 <span class="text-center">Bevrages</span>
                                 <div class="product-action">
@@ -157,7 +163,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="../../../assets/images/cakes/productCupCake.jpg"
+                                        src="assets/images/cakes/productCupCake.jpg"
                                         alt="" class="productImg"> </a>
                                 <span class="text-center">Cakes</span>
                                 <div class="product-action">
@@ -181,7 +187,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="../../../assets/images/cakes/productPuffs.jpg"
+                                        src="assets/images/cakes/productPuffs.jpg"
                                         alt="" class="productImg"> </a>
                                 <span class="text-center">Bakery</span>
                                 <div class="product-action">
@@ -201,7 +207,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="../../../assets/images/cakes/productIceCream.jpg"
+                                        src="assets/images/cakes/productIceCream.jpg"
                                         alt="" class="productImg"> </a>
                                 <span class="text-center">Colds</span>
                                 <div class="product-action">
@@ -221,7 +227,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="../../../assets/images/cakes/productBreads.jpg"
+                                        src="assets/images/cakes/productBreads.jpg"
                                         alt="" class="productImg"> </a>
                                 <span class="text-center">Bakery</span>
                                 <div class="product-action">
@@ -241,7 +247,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="../../../assets/images/cakes/productPestry.jpg"
+                                        src="assets/images/cakes/productPestry.jpg"
                                         alt="" class="productImg"> </a>
                                 <span class="text-center">Pasterys</span>
                                 <div class="product-action">
@@ -291,7 +297,7 @@
                 </span>
             </div>
             <div class="mt-2">
-                <!-- <app-address></app-address> -->
+                <app-address></app-address>
             </div>
         </div>
     </div>

@@ -19,22 +19,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.startVideoCarousel();
   }
 
-  ngOnDestroy(): void {
-    this.stopVideoCarousel();
-  }
 
-  startVideoCarousel(): void {
-    this.intervalId = setInterval(() => {
-      this.playNextVideo();
-    }, 100000); // Change the interval duration as needed
-  }
-
-  stopVideoCarousel(): void {
-    clearInterval(this.intervalId);
-  }
   @ViewChild('videoPlayer') videoPlayer!: ElementRef;
 
   videos = [
@@ -57,58 +44,6 @@ export class HomeComponent implements OnInit {
     nextVideo.play();
   }
 
-
-
-  playSelectedVideo(direction: string): void {
-    const videoElement: HTMLVideoElement = this.videoPlayer.nativeElement;
-    if (videoElement) {
-      if (direction === 'prev') {
-        videoElement.currentTime = 0;
-      } else {
-        videoElement.play();
-      }
-    }
-  }
-
-
-  private isDragging = false;
-  private startX = 0;
-  private scrollLeft = 0;
-  private images = ['image1.jpg', 'image2.jpg', 'image3.jpg']; // Add your image URLs here
-
-
-  onMouseDown(event: MouseEvent) {
-    const element = event.currentTarget as HTMLElement;
-    this.isDragging = true;
-    this.startX = event.clientX;
-    this.scrollLeft = element.scrollLeft;
-    element.classList.add('grabbing');
-  }
-
-  onMouseMove(event: MouseEvent) {
-    const element = event.currentTarget as HTMLElement;
-    if (!this.isDragging) return;
-    const scrollX = this.scrollLeft - (event.clientX - this.startX);
-    element.scrollLeft = scrollX;
-  }
-
-  onMouseUp() {
-    this.isDragging = false;
-    document.querySelector('.image-slider')?.classList.remove('grabbing');
-  }
-
-  // onMouseEnter() {
-  //   const mouseTarget:any = document.querySelector("#mouseTarget");
-
-  //   mouseTarget.addEventListener("mouseenter", (e: any) => {
-  //     mouseTarget.style.color = "green";
-  //   });
-
-  //   mouseTarget.addEventListener("mouseleave", (e: any) => {
-  //     mouseTarget.style.color = "black";
-  //   });
-  // }
-
   mouseOver(id: any) {
     let clip: any = document.querySelector("#"+id)
 
@@ -122,6 +57,22 @@ export class HomeComponent implements OnInit {
     clip.addEventListener("mouseout", function (e: any) {
       clip.pause();
    })
+  }
+
+  @ViewChild('widgetsContent', { read: ElementRef })
+  public widgetsContent!: ElementRef<any>;
+
+  public scrollRight(): void {
+    this.widgetsContent.nativeElement.scrollTo({ left: (this.widgetsContent.nativeElement.scrollLeft + 150), behavior: 'smooth' });
+  }
+
+  public scrollLeft(): void {
+    this.widgetsContent.nativeElement.scrollTo({ left: (this.widgetsContent.nativeElement.scrollLeft - 150), behavior: 'smooth' });
+  }
+
+  onClickPlay(id:any){
+    let clip: any = document.querySelector("#"+id)
+    clip.play();
   }
 }
 

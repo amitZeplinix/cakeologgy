@@ -85,7 +85,6 @@
   border-radius: 1rem;
 
 
-  display: flex;
   overflow: auto;
   scroll-snap-type: x mandatory;
   gap: 10px;
@@ -127,15 +126,21 @@
 
 .carouselSubDiv {
   display: flex;
-  position: absolute;
   right: 0;
   top: 0;
-  z-index: 2;
+  float: right;
+}
+
+@media (max-width:576px) {
+  .videoBox  {
+    margin-top: 0%;
+  }
 }
 
 @media screen and (max-width:767px) {
   .carouselSubDiv {
     display: flex;
+    padding-bottom: 20px;
   }
 }
 
@@ -148,7 +153,6 @@
   position: relative;
   margin-left: 15px;
   cursor: pointer;
-  opacity: 0.4;
 }
 
 @media screen and (min-width:1024px) {
@@ -209,7 +213,7 @@
 }
 
 .videoBox {
-  margin-top: 5%;
+  margin-top: 1%;
 }
 
 .carousel-inner {
@@ -513,4 +517,28 @@
   font-size: 1.2rem;
   font-weight: bold;
   letter-spacing: .3rem;
+}
+
+.video-overlay-play-button {
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video-overlay-play-button .fill {
+  stroke: white;
+ 
+}
+
+.video-overlay-play-button .fill {
+  stroke: white;
+ 
+}
+
+
+.video-overlay-play-button:hover .fill {
+  stroke-width: 18;
 }

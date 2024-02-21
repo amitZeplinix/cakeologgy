@@ -1,125 +1,109 @@
-<nav class="navbar navbar-expand-lg fixed-top bg-transparent">
-    <div class="container tx-12" style="color: white;font-weight: bold;">
-        <div class="navbar-brand">
-            <ul class="navbar-nav  tx-12">
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase text-white" href="#">
-                        <i data-feather="menu" aria-hidden="true" class="feather-18"></i> E-shop</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase text-white" href="#">
-                        Special Offer's
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase text-white" href="#">
-                        Your Event
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="imgDiv" *ngIf="isSearchShow != true">
-            <img src="assets/images/logoWhite.png" alt="" style="width: 90px; height: 50x;">
-        </div>
-        <button class="navbar-toggler  ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<header role="banner">
+    <nav class="navbar navbar-expand-md  bg-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logoWhite.png" alt="" style="width: 90px; height: 40x; margin: 0px; padding: 0px;">
+            </a>
+            <div class="m-2 mr-2">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+                aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation" style="color: white !important;">
+                <i data-feather="menu" aria-hidden="true"></i>
+            </button>
+            </div>
+            
 
-        <!-- Navbar collapse (Main navigation) -->
-        <div class="float-right">
-            <nav class="collapse navbar-collapse float-right" id="navbarNav">
-                <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link text-uppercase text-white" href="#" data-bs-toggle="dropdown"
-                            data-bs-auto-close="outside" aria-expanded="false">
-                            Recruitment
-                        </a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarsExample05">
+                <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+                    <li class="nav-item">
+                        <a class="nav-link active"><i data-feather="menu" aria-hidden="true" class="feather-18"></i> E-shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Special Offer's</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link text-uppercase text-white" href="#" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Our House
-                        </a>
+                        <a class="nav-link" 
+                            aria-haspopup="true" aria-expanded="false">Your Event</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link text-white" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                            aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Recruitment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Our House</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
                             <span (click)="toggleSearchBar()">
                                 <i data-feather="search" aria-hidden="true" class="feather-18"></i>
                             </span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link text-white" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                            aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
                             <i data-feather="instagram" aria-hidden="true" class="feather-18"></i>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link text-white" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                            aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
                             <i data-feather="youtube" aria-hidden="true" class="feather-18"></i>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link text-white" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                            aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
                             <i data-feather="user" aria-hidden="true" class="feather-18"></i>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link text-white" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"
-                            aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
                             <i data-feather="shopping-bag" aria-hidden="true" class="feather-18"></i>
                         </a>
                     </li>
                 </ul>
-            </nav>
-        </div>
-
-    </div>
-</nav>
-
-
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active" style="background-image: url('../../../../assets/images/cakes/img15.jpg')">
-            <div class="carousel-caption carousel-text">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
-                <button class="button">Buy Now</button>
             </div>
         </div>
-        <div class="carousel-item" style="background-image: url('../../../../assets/images/cakes/img13.jpg')">
-            <div class="carousel-caption carousel-text">
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
-                <button class="button">Buy Now</button>
+    </nav>
+</header>
+<div class="hero">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('assets/images/cakes/img15.jpg')">
+                <div class="carousel-caption carousel-text">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                    <button class="button">Buy Now</button>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('assets/images/cakes/img13.jpg')">
+                <div class="carousel-caption carousel-text">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                    <button class="button">Buy Now</button>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('assets/images/cakes/img14.jpg')">
+                <div class="carousel-caption carousel-text mb-2">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                    <button class="button">Buy Now</button>
+                </div>
             </div>
         </div>
-        <div class="carousel-item" style="background-image: url('../../../../assets/images/cakes/img14.jpg')">
-            <div class="carousel-caption carousel-text mb-2">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
-                <button class="button">Buy Now</button>
-            </div>
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
 </div>

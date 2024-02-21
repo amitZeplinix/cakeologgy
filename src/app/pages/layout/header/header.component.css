@@ -82,11 +82,100 @@
   width: 250%;
 }
 
-.content {
-  position: absolute;
-  top: 0;
-  background: transparent;
-  color: black;
+.hero {
+  height: 100vh;
   width: 100%;
-  height: 100px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.container{
+  padding-right: 0px;
+}
+
+#navbarsExample05{
+  padding-right: 0px;
+}
+
+/* Header */
+header {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 5;
+  padding: 0px;
+  margin: 0px;
+}
+
+@media (min-width: 768px) {
+  header {
+    padding: 0px 0;
+  }
+}
+
+header .navbar-brand {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+header .navbar-brand.absolute {
+  position: absolute;
+}
+
+@media (max-width: 991.98px) {
+  header .navbar-brand.absolute {
+    position: relative;
+  }
+}
+
+header .navbar-brand span {
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  header .navbar-brand span {
+    color: #cccccc;
+  }
+}
+
+header .navbar {
+  /* background: rgba(0,0,0,1) !important; */
+  padding-top: .1rem;
+  padding-bottom: .5rem;
+}
+
+@media (min-width: 768px) {
+  header .navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+    background: none !important;
+    position: relative;
+  }
+}
+
+header .navbar .nav-link {
+  padding: .2rem 1rem;
+  outline: none !important;
+  font-size: 1rem;
+  color: rgba(255,255,255,.8) !important;
+}
+
+@media (max-width: 1199.98px) {
+  header .navbar .nav-link {
+    padding: .5rem 0rem;
+  }
+}
+
+header .navbar .nav-link.active {
+  color: #6D4833 !important;
+  border-bottom: 2px solid #6D4833;
+}
+
+
+.navbar-toggler .navbar-toggler-icon{
+  color: aqua !important;
 }

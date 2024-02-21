@@ -1,49 +1,19 @@
-.main {
-    background-color: #f7f3e9;
-    color: #6D4833 !important;
-}
-
 .borderRound {
     align-items: center;
-    height: 45px;
-    width: 45px;
+    height: 35px;
+    width: 35px;
     border-radius: 50px;
     border: 2px solid;
-}
-
-.inputButton {
-    border: none;
-    color: #6D4833;
-    background-color: transparent;
-    border-bottom: 2px solid #6D4833;
-}
-
-.emailInput {
-    outline: 0;
-    border-width: 0 0 2px;
-    border-color: #6D4833;
-    background-color: transparent;
-
-}
-
-::-ms-input-placeholder {
-    color: red;
-}
-
-.footerList li{
-    margin: 10px 10px 2px 10px;
-}
-
-.footerList li a{
-    color: #6D4833;
-    font-size: 14px;
     cursor: pointer;
+}
+.borderRound:hover{
+    background-color: #FFFFFF;
 }
 
 
 .footerBg {
-    height: 110px;
-    background-image: url("../../../../assets/images/chevrons-937583_1280.webp");
+    height: 84px;
+    background-image: url("../../../../assets/images/footerimg.jpg");
     background-size: contain;
     bottom: -20px;
 }
@@ -54,8 +24,187 @@
     text-transform: uppercase;
     color: #6D4833;
     font-size: 0.9rem;
-    line-height: 2.7rem;
+    line-height: 2rem;
     /* letter-spacing: .1rem; */
-    margin: 2rem 1.5rem 2rem 1.5rem;
+    margin: 1rem 1.5rem 1rem 1.5rem;
+}
+
+
+a {
+    transition: .3s all ease;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Form Control */
+.form-control {
+    height: 45px;
+    background: #ffffff;
+    font-size: 15px;
+    border-radius: 0px;
+    box-shadow: none;
+    /* border: 1px solid #6D4833; */
+}
+
+
+textarea.form-control {
+    height: inherit !important;
+}
+
+/* Tagcloud */
+.tagcloud a {
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 4px 10px;
+    margin-bottom: 7px;
+    margin-right: 4px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.tagcloud a:hover {
+    color: #FFFFFF !important;
+    background-color: #6D4833;
+}
+
+/* Footer Section */
+.ftco-section {
+    padding: 12em 0;
+}
+
+.ftco-section h2 {
+    margin-bottom: 0;
+}
+
+/* Footer */
+footer {
+    padding: 4em 0;
+}
+
+/* Footer 04 */
+.footer-04 {
+    background: #F7F3E9;
+    color: #6D4833;
+    padding-bottom: 0;
+}
+
+.footer-04 .border-top {
+    border-color: #6D4833 !important;
+    background: #F7F3E9;
+    color: #6D4833 !important;
+}
+
+.footer-04 .footer-heading {
+    font-size: 13px;
+    color: #6D4833;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.footer-04 .footer-heading .logo {
+  margin-top: -100px;
+}
+
+.footer-04 .ftco-footer-social li a {
+    color: #6D4833;
+}
+
+.footer-04 .tagcloud a {
+    border: 1px solid #6D4833;
+    color: #6D4833;
+}
+
+.footer-04 .list-unstyled li a {
+    color: #6D4833;
+}
+
+.footer-04 .list-unstyled a {
+    color: #6D4833;
+}
+
+.footer-04 .subscribe-form .form-group {
+    position: relative;
+    margin-bottom: 0;
+  }
+  
+  .footer-04 .subscribe-form .form-group input {
+    background: rgba(255, 255, 255, .05) !important;
+    border: 1PX solid #6D4833 !important;
+    color: #6D4833 !important;
+    font-size: 16px;
+    border-right: none;
+    border-radius: 0.4rem 0 0 0.4rem;
+  }
+  
+  .footer-04 .subscribe-form .form-group input::-webkit-input-placeholder {
+    color: #6D4833 !important;
+  }
+  
+  .footer-04 .subscribe-form .form-group input::-moz-placeholder {
+    color: #6D4833 !important;
+  }
+  
+  .footer-04 .subscribe-form .form-group input:-ms-input-placeholder {
+    color: #6D4833 !important;
+  }
+  
+  .footer-04 .subscribe-form .form-group input:-moz-placeholder {
+    color: #6D4833 !important;
+  }
+  
+  .footer-04 .subscribe-form .form-group input:focus {
+    outline: #6D4833 !important;
+  }
+  
+  .footer-04 .subscribe-form .form-group .submit {
+    color: #ffffff !important;
+    display: block;
+    width: 52px;
+    height: 45px;
+    font-size: 16px;
+    background: #6D4833 !important;
+    border: 1px solid #6D4833;
+    border-left: none;
+    border-radius:  0 0.4rem .4rem 0;
   }
 
+.footer-04 .copyright {
+    color: #6D4833;
+}
+
+.footerList li {
+    margin: 10px 10px 2px 10px;
+}
+
+.footerList li a {
+    color: #6D4833;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+@media (max-width: 500px) {
+    .copyright {
+      align-items: center;
+      text-align: center;
+    }
+  }
