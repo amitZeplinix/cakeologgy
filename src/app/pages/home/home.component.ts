@@ -7,7 +7,7 @@ import * as feather from 'feather-icons';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  isShow:boolean= true;
 
   @ViewChildren('videoPlayer') videoPlayers!: QueryList<ElementRef<HTMLVideoElement>>;
 
@@ -25,12 +25,12 @@ export class HomeComponent implements OnInit {
   @ViewChild('videoPlayer') videoPlayer!: ElementRef;
 
   videos = [
-    { id: 'video1', src: 'assets/videos/video1.mp4' },
-    { id: 'video2', src: 'assets/videos/video2.mp4' },
-    { id: 'video3', src: 'assets/videos/video3.mp4' },
-    { id: 'video4', src: 'assets/videos/video4.mp4' },
-    { id: 'video5', src: 'assets/videos/video5.mp4' },
-    { id: 'video6', src: 'assets/videos/video6.mp4' }
+    { id: 'video1', src: 'assets/videos/video1.mp4', isHovered: false },
+    { id: 'video2', src: 'assets/videos/video2.mp4' , isHovered: false},
+    { id: 'video3', src: 'assets/videos/video3.mp4' , isHovered: false},
+    { id: 'video4', src: 'assets/videos/video4.mp4' , isHovered: false},
+    { id: 'video5', src: 'assets/videos/video5.mp4' , isHovered: false},
+    { id: 'video6', src: 'assets/videos/video6.mp4' , isHovered: false}
   ];
   playNextVideo(): void {
     const videoElements = this.videoPlayers.toArray();
@@ -44,16 +44,17 @@ export class HomeComponent implements OnInit {
     nextVideo.play();
   }
 
-  mouseOver(id: any) {
-    let clip: any = document.querySelector("#"+id)
-
+  mouseOver(video: any) {
+    let clip: any = document.querySelector("#"+video.id)
+    video.isHovered = true;
     /* Adding the event listeners on the video to play/pause the video. */
     clip.addEventListener("mouseover", function (e: any) {
       clip.play();
     })
   }
-  mouseOut(id: any) {
-    let clip: any = document.querySelector("#"+id);
+  mouseOut(video: any) {
+    let clip: any = document.querySelector("#"+video.id);
+    video.isHovered = false;
     clip.addEventListener("mouseout", function (e: any) {
       clip.pause();
    })

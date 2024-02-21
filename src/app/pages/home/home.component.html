@@ -5,15 +5,15 @@
             <div class="d-flex justify-content-center text-bold text-uppercase" style="color:#6D4833"> Click & Shop
             </div>
             <div class="d-flex justify-content-center mt-3" id="mouseTarget">
-                <span class="subTitle">
+                <span class="subTitle subTitleResponsive">
                     Discover our creations in video
                 </span>
             </div>
 
             <div class="videoDiv">
                 <div class="carouselSubDiv" role="group" aria-label="Navigation controls" style="right: 0px;">
-                    <div class="leftArrow" role="button" aria-label="Carousel navigation previous"
-                        aria-disabled="true" tabindex="0" (click)="scrollLeft()">
+                    <div class="leftArrow" role="button" aria-label="Carousel navigation previous" aria-disabled="true"
+                        tabindex="0" (click)="scrollLeft()">
                         <svg width="14" height="12" viewBox="0 0 14 12" fill="none" (click)="scrollLeft()"
                             xmlns="http://www.w3.org/2000/svg" class="arrow-left-icon">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -21,8 +21,8 @@
                                 fill="black"></path>
                         </svg>
                     </div>
-                    <div class="rightArrow" role="button" aria-label="Carousel navigation next"
-                        aria-disabled="false" tabindex="0" (click)="scrollRight()">
+                    <div class="rightArrow" role="button" aria-label="Carousel navigation next" aria-disabled="false"
+                        tabindex="0" (click)="scrollRight()">
                         <svg width="14" height="12" viewBox="0 0 14 12" fill="none" (click)="scrollRight()"
                             xmlns="http://www.w3.org/2000/svg" class="arrow-right-icon">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -32,17 +32,31 @@
                     </div>
                 </div>
                 <div class="carouselMainDiv" role="region" aria-roledescription="carousel">
-                    
-                    <div class="d-lg-flex carousel-inner " #widgetsContent id="style-3" role="group" aria-label="Carousel slides">
-                        <div  class="videoBox" *ngFor="let video of videos; let i = index"
-                            [style.transform]="'translateX(' + (i * 10) + '%)'">
-                            <video #videoPlayer [src]="video.src" [id]="video.id" (mouseover)="mouseOver(video.id)"
-                                (mouseout)="mouseOut(video.id)" type="video/mp4" loop></video>
 
-                                <!-- <svg class="video-overlay-play-button" viewBox="0 0 200 200" alt="Play video" (click)="onClickPlay(video.id)">
-                                    <circle class="fill" cx="100" cy="100" r="90" fill="none" stroke-width="5" stroke="#fff"/>
-                                    <polygon class="fill" points="70, 55 70, 145 145, 100" fill="#fff"/>
-                                </svg> -->
+                    <div class="d-lg-flex carousel-inner " #widgetsContent id="style-3" role="group"
+                        aria-label="Carousel slides">
+                        <div class="videoBox" *ngFor="let video of videos; let i = index"
+                            [style.transform]="'translateX(' + (i * 10) + '%)'">
+                            <video #videoPlayer [src]="video.src" [id]="video.id" (mouseover)="mouseOver(video)"
+                                (mouseout)="mouseOut(video)" type="video/mp4" loop></video>
+
+                            <svg class="video-overlay-play-button" viewBox="0 0 200 200" alt="Play video"
+                                *ngIf=" video.isHovered == false">
+                                <circle class="fill" cx="100" cy="100" r="90" fill="none" stroke-width="5"
+                                    stroke="#fff" />
+                                <polygon class="fill" points="70, 55 70, 145 145, 100" fill="#fff" />
+                            </svg>
+                            <svg *ngIf=" video.isHovered == true" class="video-overlay-pause-button" height="512px" id="Layer_1"
+                                style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"
+                                width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g>
+                                    <path
+                                        d="M224,435.8V76.1c0-6.7-5.4-12.1-12.2-12.1h-71.6c-6.8,0-12.2,5.4-12.2,12.1v359.7c0,6.7,5.4,12.2,12.2,12.2h71.6   C218.6,448,224,442.6,224,435.8z" />
+                                    <path
+                                        d="M371.8,64h-71.6c-6.7,0-12.2,5.4-12.2,12.1v359.7c0,6.7,5.4,12.2,12.2,12.2h71.6c6.7,0,12.2-5.4,12.2-12.2V76.1   C384,69.4,378.6,64,371.8,64z" />
+                                </g>
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -57,7 +71,7 @@
             <div class="d-flex justify-content-center text-bold text-uppercase" style="color:#6D4833"> discover
             </div>
             <div class="d-flex justify-content-center mt-3">
-                <span class="subTitle">
+                <span class="subTitle subTitleResponsive">
                     offer treats
                 </span>
             </div>
@@ -92,7 +106,7 @@
                 stores
             </div>
             <div class="d-flex justify-content-center mt-3">
-                <span class="subTitle">
+                <span class="subTitle subTitleResponsive">
                     discover our range of desserts
                 </span>
             </div>
@@ -103,8 +117,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="assets/images/cakes/productCake.jpg"
-                                        alt="" class="productImg"> </a>
+                                        src="assets/images/cakes/productCake.jpg" alt="" class="productImg"> </a>
                                 <span class="text-center">Made With Love</span>
                                 <div class="product-action">
                                     <div style="margin: 0 4.5rem 0 4.5rem; background-color: #fff;"><b
@@ -123,8 +136,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="assets/images/cakes/productBrowinies.jpg"
-                                        alt="" class="productImg"> </a>
+                                        src="assets/images/cakes/productBrowinies.jpg" alt="" class="productImg"> </a>
                                 <span class="text-center">Bars and Brownies</span>
                                 <div class="product-action">
                                     <div style="margin: 0 4.5rem 0 4.5rem; background-color: #fff;"><b
@@ -143,8 +155,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="assets/images/cakes/productSmoothe.jpg"
-                                        alt="" class="productImg"> </a>
+                                        src="assets/images/cakes/productSmoothe.jpg" alt="" class="productImg"> </a>
                                 <span class="text-center">Bevrages</span>
                                 <div class="product-action">
                                     <div style="margin: 0 4.5rem 0 4.5rem; background-color: #fff;"><b
@@ -163,8 +174,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="assets/images/cakes/productCupCake.jpg"
-                                        alt="" class="productImg"> </a>
+                                        src="assets/images/cakes/productCupCake.jpg" alt="" class="productImg"> </a>
                                 <span class="text-center">Cakes</span>
                                 <div class="product-action">
                                     <div style="margin: 0 4.5rem 0 4.5rem; background-color: #fff;"><b
@@ -187,8 +197,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="assets/images/cakes/productPuffs.jpg"
-                                        alt="" class="productImg"> </a>
+                                        src="assets/images/cakes/productPuffs.jpg" alt="" class="productImg"> </a>
                                 <span class="text-center">Bakery</span>
                                 <div class="product-action">
                                     <div style="margin: 0 4.5rem 0 4.5rem; background-color: #fff;"><b
@@ -207,8 +216,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="assets/images/cakes/productIceCream.jpg"
-                                        alt="" class="productImg"> </a>
+                                        src="assets/images/cakes/productIceCream.jpg" alt="" class="productImg"> </a>
                                 <span class="text-center">Colds</span>
                                 <div class="product-action">
                                     <div style="margin: 0 4.5rem 0 4.5rem; background-color: #fff;"><b
@@ -227,8 +235,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="assets/images/cakes/productBreads.jpg"
-                                        alt="" class="productImg"> </a>
+                                        src="assets/images/cakes/productBreads.jpg" alt="" class="productImg"> </a>
                                 <span class="text-center">Bakery</span>
                                 <div class="product-action">
                                     <div style="margin: 0 4.5rem 0 4.5rem; background-color: #fff;"><b
@@ -247,8 +254,7 @@
                     <div class="col-md-3">
                         <div class="product-wrapper mb-45 text-center">
                             <div class="product-img"> <a href="#" data-abc="true"> <img
-                                        src="assets/images/cakes/productPestry.jpg"
-                                        alt="" class="productImg"> </a>
+                                        src="assets/images/cakes/productPestry.jpg" alt="" class="productImg"> </a>
                                 <span class="text-center">Pasterys</span>
                                 <div class="product-action">
                                     <div style="margin: 0 4.5rem 0 4.5rem; background-color: #fff;"><b
@@ -308,8 +314,7 @@
     <div class="delivaryContainer">
         <div class="d-flex flex-wrap justify-content-between p-5" style="color: white">
 
-            <div class="col-6 col-lg-3"
-                style="text-align: center;">
+            <div class="col-6 col-lg-3" style="text-align: center;">
                 <i data-feather="smartphone" class="iconsDContainer m-3"></i>
                 <div class="text-uppercase">
                     <span style="vertical-align: inherit;">
@@ -317,13 +322,12 @@
                     </span>
                 </div>
                 <div class="d-block text-muted tx-12">
-                        <span  class="text-muted">Order today before 10 p.m. and collect tomorrow from
-                            10 a.m.
-                        </span>
-                    </div>
+                    <span class="text-muted">Order today before 10 p.m. and collect tomorrow from
+                        10 a.m.
+                    </span>
+                </div>
             </div>
-            <div class="col-6 col-lg-3"
-                style="text-align: center;">
+            <div class="col-6 col-lg-3" style="text-align: center;">
                 <i data-feather="smartphone" class="iconsDContainer m-3"></i>
                 <div class="text-uppercase">
                     <span style="vertical-align: inherit;">
@@ -331,12 +335,11 @@
                     </span>
                 </div>
                 <p class="d-block text-muted">
-                        <span style="vertical-align: inherit;">open 7/7 - 24/7
-                        </span>
+                    <span style="vertical-align: inherit;">open 7/7 - 24/7
+                    </span>
                 </p>
             </div>
-            <div class="col-6 col-lg-3"
-                style="text-align: center;">
+            <div class="col-6 col-lg-3" style="text-align: center;">
                 <i data-feather="truck" class="iconsDContainer m-3"></i>
                 <div class="text-uppercase">
                     <span style="vertical-align: inherit;">
@@ -352,8 +355,7 @@
                     </span>
                 </p>
             </div>
-            <div class="col-6 col-lg-3"
-                style="text-align: center;">
+            <div class="col-6 col-lg-3" style="text-align: center;">
                 <i data-feather="truck" class="iconsDContainer m-3"></i>
                 <div class="text-uppercase">
                     <span style="vertical-align: inherit;">

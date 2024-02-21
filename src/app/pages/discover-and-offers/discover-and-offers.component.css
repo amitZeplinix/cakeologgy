@@ -132,4 +132,26 @@
     cursor: pointer;
   }
 
+  @media (max-width: 500px) {
+    .card .card-body .header{
+          font-size:13px;
+          display: flex;
+          overflow-x: hidden;
+    }
+    .card{
+        height: 300px;
+    }
+    .buyBtn{
+        left: 10px;
+        bottom: -30px;
+    }
+  }
+
+  @media (max-width: 765px) {
+
+    .card{
+        height: 290px;
+    }
+  }
+
   

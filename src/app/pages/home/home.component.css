@@ -77,6 +77,15 @@
   letter-spacing: .3rem;
 }
 
+@media (max-width: 500px) {
+  .subTitleResponsive{
+     text-align: center;
+     font-size: 2rem;
+     line-height: 2rem;
+     letter-spacing: .3rem;
+  }
+}
+
 .videoDiv {
   /* border: #6D4833 solid 1px; */
   margin: 10px;
@@ -540,5 +549,30 @@
 
 
 .video-overlay-play-button:hover .fill {
+  stroke-width: 18;
+}
+
+.video-overlay-pause-button{
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
+  top: 50%;
+  left: 50%;
+  fill: #fff;
+  transform: translate(-50%, -50%);
+}
+
+.video-overlay-pause-button .fill {
+  stroke: white;
+ 
+}
+
+.video-overlay-pause-button .fill {
+  stroke: white;
+ 
+}
+
+
+.video-overlay-pause-button:hover .fill {
   stroke-width: 18;
 }
